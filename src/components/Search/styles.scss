@@ -1,0 +1,20 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    .input-container {
+        border-bottom: 1px black solid;
+        padding-bottom: 0.5rem;
+
+        input {
+            all: unset;
+            margin-left: 0.5rem;
+        }
+    }
+
+    span {
+        padding: 0.5rem 0;
+        font-size: 0.75em;
+    }
+}

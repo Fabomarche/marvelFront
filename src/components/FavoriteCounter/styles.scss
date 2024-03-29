@@ -1,0 +1,14 @@
+.favorite-counter-container {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    justify-content: space-between;
+
+    span {
+        color: #FFFFFF;
+        size: 1em;
+        font-weight: 400;
+        line-height: 18.75px;
+    }
+}
