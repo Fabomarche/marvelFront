@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
 
+    img {
+        max-width: 190px;
+        height: 190px;
+        object-fit: cover;
+    }
+
 
 
     .card-inner-container {
@@ -64,6 +70,10 @@
                 color: white;
                 font-size: 0.875em;
                 z-index: 2;
+                width: 145px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
     }

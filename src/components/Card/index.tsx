@@ -3,7 +3,14 @@ import Heart from '../Icons/Heart'
 import EmptyHeart from '../Icons/EmptyHeart'
 import './styles.scss'
 
-const Card = ({ key, name, imgSrc, isFavorite }) => {
+interface CardProps {
+    key: string;
+    name: string;
+    imgSrc: string;
+    isFavorite: boolean;
+}
+
+const Card: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
     return (
         <div className='card-container' id={key}>
             <img src={imgSrc} alt={name} />

@@ -1,19 +1,22 @@
 import Card from '../Card'
-import character from '../../assets/character.svg'
+import { useFetchCharacters } from '../../hooks/useFetchCharacters'
+import { CharacterType } from '../../domain/CharacterTypes'
+
 import './styles.scss'
 
+
 const CardsList = () => {
-    const cardsData = Array.from({ length: 50 }, (_, index) => ({
-        id: index + 1,
-        name: `Super hero ${index + 1}`,
-        imgSrc: character,
-        isFavorite: false
-    }));
+    const [characters, isLoading] = useFetchCharacters()
 
     return (
         <div className='cards-list-container'>
-            {cardsData.map(card => (
-                <Card key={card.id} name={card.name} imgSrc={card.imgSrc} isFavorite={card.isFavorite} />
+            {characters.map((character: CharacterType) => (
+                <Card
+                    key={character.id}
+                    name={character.name}
+                    imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    isFavorite={false}
+                />
             ))}
         </div>
     )
