@@ -1,6 +1,6 @@
-// import heart from '../../assets/heart.svg'
-// import emptyHeart from '../../assets/empty-heart.svg'
+
 import Heart from '../Icons/Heart'
+import EmptyHeart from '../Icons/EmptyHeart'
 import './styles.scss'
 
 const Card = ({ key, name, imgSrc, isFavorite }) => {
@@ -13,8 +13,11 @@ const Card = ({ key, name, imgSrc, isFavorite }) => {
                 <div className='card-rectangle'></div>
                 <div className='card-info-container'>
                     <h3>{name}</h3>
-                    {/* <img src={isFavorite ? heart : emptyHeart} /> */}
-                    <Heart />
+                    {true ? <Heart className={'heart'} />
+                        : <EmptyHeart className={'heart'} />
+
+                    }
+
                 </div>
 
             </div>
