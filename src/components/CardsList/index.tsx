@@ -12,7 +12,7 @@ const CardsList = () => {
         <div className='cards-list-container'>
             {characters.map((character: CharacterType) => (
                 <Card
-                    key={character.id}
+                    key={character.id.toString()}
                     name={character.name}
                     imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                     isFavorite={false}
