@@ -1,6 +1,7 @@
 
-import Home from './Screens/Home/Home'
+import Home from './Screens/Home'
 import './App.css'
+import FavoritesView from './Screens/FavoritesView'
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
 
   return (
     <>
-      <Home />
+      {/* <Home /> */}
+      <FavoritesView />
     </>
   )
 }
