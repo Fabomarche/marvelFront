@@ -5,17 +5,17 @@ import './styles.scss';
 
 interface CardsListProps {
     data: (CharacterType | ComicType)[];
-    ChildComponent: React.ComponentType<any>; // Tipo para el componente hijo
+    ChildComponent: React.ComponentType<any>;
 }
 
 const CardsList: React.FC<CardsListProps> = ({ data, ChildComponent }) => {
 
     return (
         <div className='cards-list-container'>
-            {data.map((item: CharacterType | ComicType) => (
+            {data.map((item: CharacterType | ComicType, index: number) => (
                 <ChildComponent
-                    id={item.id}
-                    name={item.name}
+                    id={item.id || index}
+                    title={item.name}
                     imgSrc={`${item.thumbnail.path}.${item.thumbnail.extension}`}
                 />
             ))}

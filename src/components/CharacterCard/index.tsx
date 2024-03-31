@@ -9,20 +9,20 @@ interface CardProps {
     imgSrc: string;
 }
 
-const CharacterCard: React.FC<CardProps> = ({ id, name, imgSrc }) => {
+const CharacterCard: React.FC<CardProps> = ({ id, title, imgSrc }) => {
     const [toogleFavorite, setToogleFavorite] = useState(false)
 
     return (
         <Link to={`/detail/${id}`}>
 
             <div className='character-card-container' id={`${id}`}>
-                <img src={imgSrc} alt={name} />
+                <img src={imgSrc} alt={title} />
 
                 <div className='card-inner-container'>
 
                     <div className='card-rectangle'></div>
                     <div className='card-info-container'>
-                        <h3>{name}</h3>
+                        <h3>{title}</h3>
                         <FavoriteHeart isFavorite={toogleFavorite} id='favoriteCharacters' />
 
                     </div>

@@ -2,8 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useFetchOneCharacter } from '../../hooks/useFetchOneCharacter';
 import MainLayout from '../../components/MainLayout'
 import CharacterResume from '../../components/CharacterResumeDetail'
-import './styles.scss'
+import CardsList from '../../components/CardsList';
+import ComicCard from '../../components/ComicCard';
 
+import './styles.scss'
 
 const DetailView = () => {
     const { id } = useParams();
@@ -18,7 +20,7 @@ const DetailView = () => {
                         <CharacterResume name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                         <div className='detail-inner-container'>
                             <h2 className='layout-title'>Comics {id}</h2>
-                            {/* <CardsList data={ } /> */}
+                            <CardsList data={characterComics} ChildComponent={ComicCard} />
 
                         </div>
 
