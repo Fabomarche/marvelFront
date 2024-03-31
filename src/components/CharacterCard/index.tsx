@@ -1,32 +1,47 @@
 import { useState } from 'react';
 import FavoriteHeart from '../FavoriteHeart';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CardProps } from '../../infrastructure/CardProps';
+import useStorageFavorites from '../../hooks/useStorageFavorites';
 
 import './styles.scss'
 
 const CharacterCard: React.FC<CardProps> = ({ id, title, imgSrc }) => {
-    const [toogleFavorite, setToogleFavorite] = useState(false)
+    const { toggleFavorite, isFavorite } = useStorageFavorites('favoritesCharacters')
+    const navigate = useNavigate();
 
+    const card = {
+        id: id,
+        title: title,
+        imgSrc: imgSrc
+    }
+
+    const handleToogleFavorite = () => {
+        toggleFavorite(card)
+    }
+
+    const handleCardClick = () => {
+        navigate(`/detail/${id}`);
+    }
     return (
-        <Link to={`/detail/${id}`}>
 
-            <div className='character-card-container' id={`${id}`}>
-                <img src={imgSrc} alt={title} />
+        <div className='character-card-container' id={`${id}`} key={id}>
+            <img src={imgSrc} alt={title} onClick={handleCardClick} />
 
-                <div className='card-inner-container'>
+            <div className='card-inner-container'>
 
-                    <div className='card-rectangle'></div>
-                    <div className='card-info-container'>
-                        <h3>{title}</h3>
-                        <FavoriteHeart isFavorite={toogleFavorite} id='favoriteCharacters' />
-
-                    </div>
+                <div className='card-rectangle'></div>
+                <div className='card-info-container'>
+                    <h3 onClick={handleCardClick}>{title}</h3>
+                    <FavoriteHeart isFavorite={isFavorite(card)} handleToogleFavorite={handleToogleFavorite} />
 
                 </div>
 
             </div>
-        </Link>
+
+        </div>
+
+
     )
 }
 

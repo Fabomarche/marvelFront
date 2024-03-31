@@ -8,7 +8,7 @@ import CharacterCard from '../../components/CharacterCard'
 import './styles.scss'
 
 const FavoritesView = () => {
-    const { favorites, toggleFavorite } = useStorageFavorites('favoritesCharacters')
+    const { favorites } = useStorageFavorites('favoritesCharacters')
 
     return (
         <MainLayout>

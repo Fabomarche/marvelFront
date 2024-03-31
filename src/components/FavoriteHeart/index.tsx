@@ -1,20 +1,18 @@
 import React from 'react';
 import Heart from '../Icons/Heart';
 import EmptyHeart from '../Icons/EmptyHeart';
-import useStorageFavorites from '../../hooks/useStorageFavorites';
 
 import './styles.scss'
 
 interface HeartProps {
     isFavorite: boolean;
-    key: string
+    handleToogleFavorite: () => void;
 }
 
-const FavoriteHeart: React.FC<HeartProps> = ({ isFavorite, key }) => {
-    const { favorites, toggleFavorite } = useStorageFavorites(key)
+const FavoriteHeart: React.FC<HeartProps> = ({ isFavorite, handleToogleFavorite }) => {
 
     return (
-        <button onClick={() => { }}>
+        <button onClick={handleToogleFavorite}>
             {isFavorite ? <Heart className={'heart'} />
                 : <EmptyHeart className={'heart'} />}
         </button>

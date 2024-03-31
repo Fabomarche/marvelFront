@@ -1,16 +1,16 @@
-a {
-    text-decoration: none;
-}
-
 .character-card-container {
     width: fit-content;
     display: flex;
     flex-direction: column;
 
+
+
+
     img {
         max-width: 190px;
         height: 190px;
         object-fit: cover;
+        cursor: pointer;
     }
 
 
@@ -57,6 +57,7 @@ a {
                 }
             }
 
+
             .heart {
                 path {
 
@@ -65,6 +66,12 @@ a {
 
                 z-index: 2;
 
+            }
+
+            button {
+                all: unset;
+                z-index: 3;
+                cursor: pointer;
             }
 
 
@@ -78,6 +85,7 @@ a {
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
+                cursor: pointer;
             }
         }
     }

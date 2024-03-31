@@ -15,14 +15,12 @@ const DetailView = () => {
     const { isLoadingComics, comics } = useFetchCharacterComics(id)
 
 
-
-
     return (
         <div className='detail-view'>
             <MainLayout>
                 {isLoading ? "loding..."
                     :
-                    <CharacterResume name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                    <CharacterResume id={parseInt(id)} name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                 }
 
                 <div className='detail-inner-container'>

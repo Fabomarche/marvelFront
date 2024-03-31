@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<FavoritesView />} />
         <Route path="/detail/:id" element={<DetailView />} />
+        <Route path="/detail/undefined" element={<Home />} />
       </Routes>
 
     </Router>

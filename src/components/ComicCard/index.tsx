@@ -4,7 +4,6 @@ import './syles.scss'
 
 
 const ComicCard: React.FC<CardProps> = ({ id, imgSrc, title }) => {
-    console.log(id, imgSrc, title)
     const { comicName, comicYear } = parseComicTitle(title)
 
     return (
