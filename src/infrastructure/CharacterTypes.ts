@@ -8,7 +8,7 @@ type UrlType = {
     url: string;
 };
 
-type Comics = {
+export type ComicType = {
     resourceURI: string;
     name: string;
 }
@@ -23,7 +23,7 @@ export type CharacterType = {
     comics: {
         available: number;
         collectionURI: string;
-        items: Comics[];
+        items: ComicType[];
         returned: number;
     };
     series: {

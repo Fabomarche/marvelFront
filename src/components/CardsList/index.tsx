@@ -1,27 +1,26 @@
-import CharacterCard from '../CharacterCard'
-import { CharacterType } from '../../infrastructure/CharacterTypes.ts'
+import React from 'react';
+import { CharacterType, ComicType } from '../../infrastructure/CharacterTypes.ts';
 
-import './styles.scss'
+import './styles.scss';
 
 interface CardsListProps {
-    data: CharacterType[];
+    data: (CharacterType | ComicType)[];
+    ChildComponent: React.ComponentType<any>; // Tipo para el componente hijo
 }
 
-const CardsList = ({ data }: CardsListProps) => {
+const CardsList: React.FC<CardsListProps> = ({ data, ChildComponent }) => {
 
     return (
         <div className='cards-list-container'>
-            {data.map((character: CharacterType) => (
-                <>
-                    <CharacterCard
-                        id={character.id}
-                        name={character.name}
-                        imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                    />
-                </>
+            {data.map((item: CharacterType | ComicType) => (
+                <ChildComponent
+                    id={item.id}
+                    name={item.name}
+                    imgSrc={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                />
             ))}
         </div>
-    )
+    );
 }
 
-export default CardsList
+export default CardsList;
