@@ -11,7 +11,7 @@ const DetailView = () => {
                 <CharacterResume />
                 <div className='detail-inner-container'>
                     <h2 className='layout-title'>Comics</h2>
-                    <CardsList data={ } />
+                    {/* <CardsList data={ } /> */}
 
                 </div>
 

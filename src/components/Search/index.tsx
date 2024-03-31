@@ -1,26 +1,42 @@
-import searchIcon from '../../assets/search.svg'
-import './styles.scss'
+import { useState } from 'react';
+import searchIcon from '../../assets/search.svg';
+import './styles.scss';
 
-const Search = () => {
-    //const store = useFormContext();
+interface Props {
+    setFilter: (filter: string) => void;
+    isLoading: boolean
+    charactersCount: number;
+}
 
-    // const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
-    //     store.addTodo(event.currentTarget.name.value);
-    // };
+const Search: React.FC<Props> = ({ setFilter, isLoading, charactersCount }) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setFilter(inputValue);
+
+    };
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
+    };
+
     return (
-        <div className='search-container'>
+        <form className='search-container' onSubmit={handleSubmit}>
             <div className='input-container'>
-                <img src={searchIcon} alt=' search icon' />
+                <button>
+                    <img src={searchIcon} alt='search icon' />
+                </button>
                 <input
                     type='text'
                     placeholder='SEARCH CHARACTER...'
-                // onSubmit={onSubmit}
+                    value={inputValue}
+                    onChange={handleChange}
                 />
             </div>
-            <span>50 results</span>
-        </div>
-    )
-}
+            <span>{isLoading ? "..." : charactersCount} results</span>
+        </form>
+    );
+};
 
-export default Search
+export default Search;
