@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { FavoriteType } from '../infrastructure/FavoritesTypes';
+import { CharacterType } from '../infrastructure/CharacterTypes';
 
 const useStorageFavorites = (key: string) => {
-    const [favorites, setFavorites] = useState<string[]>([]);
+    const [favorites, setFavorites] = useState<FavoriteType[]>([]);
 
     useEffect(() => {
         const storedFavorites = localStorage.getItem(key);
@@ -10,11 +12,18 @@ const useStorageFavorites = (key: string) => {
         }
     }, [key]);
 
-    const toggleFavorite = (cardId: string) => {
+    const toggleFavorite = (card: CharacterType) => {
         const updatedFavorites = [...favorites];
-        const index = updatedFavorites.indexOf(cardId);
+
+        const index = updatedFavorites.findIndex(item => item.id === card.id)
+
         if (index === -1) {
-            updatedFavorites.push(cardId);
+            const favoriteCard = {
+                id: card.id,
+                title: card.name,
+                thumbnail: card.thumbnail
+            }
+            updatedFavorites.push(favoriteCard);
         } else {
             updatedFavorites.splice(index, 1);
         }
