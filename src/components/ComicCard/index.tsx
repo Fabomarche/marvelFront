@@ -10,8 +10,10 @@ const ComicCard: React.FC<CardProps> = ({ id, imgSrc, title }) => {
     return (
         <div className='comic-card-container' key={id}>
             <img src={imgSrc} />
-            <h3>{comicName}</h3>
-            <span>{comicYear}</span>
+            <div className='comic-card-inner-container'>
+                <h3>{comicName}</h3>
+                <span>{comicYear}</span>
+            </div>
 
 
         </div>

@@ -7,5 +7,25 @@
 
     .detail-inner-container {
         padding: 1.5rem 16rem;
+
+        .cards-list-container {
+            display: flex;
+            overflow-y: hidden;
+            padding-bottom: 1.5rem;
+
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #D9D9D9;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #EC1D24;
+            }
+
+        }
     }
+
 }

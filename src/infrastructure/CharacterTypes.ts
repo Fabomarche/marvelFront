@@ -8,7 +8,7 @@ type UrlType = {
     url: string;
 };
 
-export type ComicType = {
+type ComicType = {
     resourceURI: string;
     name: string;
 }
