@@ -10,7 +10,9 @@
 
         .cards-list-container {
             display: flex;
+            justify-content: left;
             overflow-y: hidden;
+            overflow-x: scroll;
             padding-bottom: 1.5rem;
 
             &::-webkit-scrollbar {
