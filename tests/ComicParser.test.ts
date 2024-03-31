@@ -1,5 +1,5 @@
 import { describe, it, expect } from '@jest/globals'
-import { parseComicTitle } from '../helpers/parseComicTitle'
+import { parseComicTitle } from '../src/helpers/parseComicTitle'
 
 describe('parseComicTitle', () => {
 
