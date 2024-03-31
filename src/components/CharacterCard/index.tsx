@@ -1,30 +1,36 @@
+import { useState } from 'react';
 import FavoriteHeart from '../FavoriteHeart';
 import './styles.scss'
+import { Link } from 'react-router-dom';
 
 interface CardProps {
-    key: string;
+    id: number;
     name: string;
     imgSrc: string;
-    isFavorite: boolean;
 }
 
-const CharacterCard: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
+const CharacterCard: React.FC<CardProps> = ({ id, name, imgSrc }) => {
+    const [toogleFavorite, setToogleFavorite] = useState(false)
+
     return (
-        <div className='character-card-container' id={key}>
-            <img src={imgSrc} alt={name} />
+        <Link to={`/detail/${id}`}>
 
-            <div className='card-inner-container'>
+            <div className='character-card-container' id={`${id}`}>
+                <img src={imgSrc} alt={name} />
 
-                <div className='card-rectangle'></div>
-                <div className='card-info-container'>
-                    <h3>{name}</h3>
-                    <FavoriteHeart isFavorite={true} />
+                <div className='card-inner-container'>
+
+                    <div className='card-rectangle'></div>
+                    <div className='card-info-container'>
+                        <h3>{name}</h3>
+                        <FavoriteHeart isFavorite={toogleFavorite} id='favoriteCharacters' />
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
+        </Link>
     )
 }
 

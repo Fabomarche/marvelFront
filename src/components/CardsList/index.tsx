@@ -12,12 +12,13 @@ const CardsList = ({ data }: CardsListProps) => {
     return (
         <div className='cards-list-container'>
             {data.map((character: CharacterType) => (
-                <CharacterCard
-                    key={character.id.toString()}
-                    name={character.name}
-                    imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                    isFavorite={false}
-                />
+                <>
+                    <CharacterCard
+                        id={character.id}
+                        name={character.name}
+                        imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    />
+                </>
             ))}
         </div>
     )

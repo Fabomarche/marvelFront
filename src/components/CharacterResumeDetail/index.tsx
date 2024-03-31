@@ -1,18 +1,23 @@
-import character from '../../assets/character.svg'
 import FavoriteHeart from '../FavoriteHeart'
 import './styles.scss'
 
-const CharacterResume = () => {
+interface Props {
+    name: string;
+    description: string;
+    imgSrc: string;
+}
+
+const CharacterResume: React.FC<Props> = ({ name, description, imgSrc }) => {
     return (
         <div className='resume-container'>
-            <img src={character} alt={'a'} />
+            <img src={imgSrc} alt={name} />
             <div className='resume-info-container'>
                 <div className='resume-title-container'>
-                    <h2>ADAM WARLOCK</h2>
+                    <h2>{name}</h2>
                     <FavoriteHeart isFavorite={false} />
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aperiam, culpa est alias quasi vitae. Veniam, suscipit placeat at fuga mollitia repellendus! Vel veritatis aspernatur tempore fuga odio rem assumenda.
+                    {description}
                 </p>
             </div>
 

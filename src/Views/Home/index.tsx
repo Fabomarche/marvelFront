@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MainLayout from '../../components/MainLayout'
 import Search from '../../components/Search'
-import { useFetchCharacters } from '../../hooks/useFetchCharacters'
+import { useFetchAllCharacters } from '../../hooks/useFetchAllCharacters'
 
 import CardsList from '../../components/CardsList'
 
@@ -9,7 +9,7 @@ import './styles.scss'
 
 const Home = () => {
     const [filter, setFilter] = useState('')
-    const { characters, isLoading, charactersCount } = useFetchCharacters(filter);
+    const { characters, isLoading, charactersCount } = useFetchAllCharacters(filter);
 
     return (
         <MainLayout>

@@ -5,6 +5,8 @@
 
     img {
         max-width: 320px;
+        height: 320px;
+        object-fit: cover;
     }
 
     .resume-info-container {
@@ -14,6 +16,7 @@
         flex-direction: column;
         padding-left: 2rem;
         flex-wrap: wrap;
+        width: 100%;
 
         .resume-title-container {
             display: flex;

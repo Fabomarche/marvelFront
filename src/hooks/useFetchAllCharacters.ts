@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { fetchCharacters } from "../Services/marvelService"
+import { fetchAllCharacters } from "../Services/marvelService"
 
-export const useFetchCharacters = (filter: string | null) => {
+export const useFetchAllCharacters = (filter: string | null) => {
     const [characters, setCharacters] = useState<any>([])
     const [isLoading, setIsLoading] = useState(true)
     const [charactersCount, setCharactersCount] = useState(0)
@@ -10,7 +10,7 @@ export const useFetchCharacters = (filter: string | null) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await fetchCharacters(filter);
+                const data = await fetchAllCharacters(filter);
                 setCharactersCount(data.data.count)
                 setCharacters(data.data.results);
                 setIsLoading(false)

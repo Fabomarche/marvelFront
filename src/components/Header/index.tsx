@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FavoriteCounter from '../FavoriteCounter';
 import Logo from '../Logo';
 import './styles.scss';
@@ -5,8 +6,12 @@ import './styles.scss';
 const Header = () => {
     return (
         <div className='header-container'>
-            <Logo />
-            <FavoriteCounter />
+            <Link to='/'>
+                <Logo />
+            </Link>
+            <Link to='/favorites' >
+                <FavoriteCounter />
+            </Link>
         </div>
     )
 }
