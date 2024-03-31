@@ -1,17 +1,18 @@
-import Card from '../Card'
-import { useFetchCharacters } from '../../hooks/useFetchCharacters'
-import { CharacterType } from '../../domain/CharacterTypes'
+import CharacterCard from '../CharacterCard'
+import { CharacterType } from '../../infrastructure/CharacterTypes.ts'
 
 import './styles.scss'
 
+interface CardsListProps {
+    data: CharacterType[];
+}
 
-const CardsList = () => {
-    const [characters, isLoading] = useFetchCharacters()
+const CardsList = ({ data }: CardsListProps) => {
 
     return (
         <div className='cards-list-container'>
-            {characters.map((character: CharacterType) => (
-                <Card
+            {data.map((character: CharacterType) => (
+                <CharacterCard
                     key={character.id.toString()}
                     name={character.name}
                     imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`}

@@ -8,6 +8,11 @@ type UrlType = {
     url: string;
 };
 
+type Comics = {
+    resourceURI: string;
+    name: string;
+}
+
 export type CharacterType = {
     id: number;
     name: string;
@@ -18,25 +23,25 @@ export type CharacterType = {
     comics: {
         available: number;
         collectionURI: string;
-        items: any[]; // CHECK
+        items: Comics[];
         returned: number;
     };
     series: {
         available: number;
         collectionURI: string;
-        items: any[]; // CHECK
+        items: any[];
         returned: number;
     };
     stories: {
         available: number;
         collectionURI: string;
-        items: any[]; // CHECK
+        items: any[];
         returned: number;
     };
     events: {
         available: number;
         collectionURI: string;
-        items: any[]; // CHECK
+        items: any[];
         returned: number;
     };
     urls: UrlType[];

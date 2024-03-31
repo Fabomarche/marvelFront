@@ -1,17 +1,25 @@
 
-import Home from './Screens/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Views/Home'
+import FavoritesView from './Views/FavoritesView'
+import DetailView from './Views/DetailView'
 import './App.css'
-import FavoritesView from './Screens/FavoritesView'
 
 
 function App() {
 
 
   return (
-    <>
-      {/* <Home /> */}
-      <FavoritesView />
-    </>
+    <Router>
+
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<FavoritesView />} />
+        <Route path="/detail/:id" element={<DetailView />} />
+      </Routes>
+
+    </Router>
   )
 }
 

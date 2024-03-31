@@ -1,6 +1,4 @@
-
-import Heart from '../Icons/Heart'
-import EmptyHeart from '../Icons/EmptyHeart'
+import FavoriteHeart from '../FavoriteHeart';
 import './styles.scss'
 
 interface CardProps {
@@ -10,9 +8,9 @@ interface CardProps {
     isFavorite: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
+const CharacterCard: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
     return (
-        <div className='card-container' id={key}>
+        <div className='character-card-container' id={key}>
             <img src={imgSrc} alt={name} />
 
             <div className='card-inner-container'>
@@ -20,10 +18,7 @@ const Card: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
                 <div className='card-rectangle'></div>
                 <div className='card-info-container'>
                     <h3>{name}</h3>
-                    {true ? <Heart className={'heart'} />
-                        : <EmptyHeart className={'heart'} />
-
-                    }
+                    <FavoriteHeart isFavorite={true} />
 
                 </div>
 
@@ -33,4 +28,4 @@ const Card: React.FC<CardProps> = ({ key, name, imgSrc, isFavorite }) => {
     )
 }
 
-export default Card
+export default CharacterCard

@@ -1,0 +1,35 @@
+.resume-container {
+    background-color: black;
+    padding: 0 16rem;
+    display: flex;
+
+    img {
+        max-width: 320px;
+    }
+
+    .resume-info-container {
+        color: white;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        flex-wrap: wrap;
+
+        .resume-title-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        p {
+            text-transform: none;
+        }
+
+
+    }
+}
