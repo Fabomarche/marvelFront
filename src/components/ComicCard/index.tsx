@@ -1,14 +1,17 @@
-
+import { parseComicTitle } from '../../helpers/parseComicTitle'
+import { CardProps } from '../../infrastructure/CardProps'
 import './syles.scss'
 
-const ComicCard = ({ id, img, title }) => {
 
+const ComicCard: React.FC<CardProps> = ({ id, imgSrc, title }) => {
+    console.log(id, imgSrc, title)
+    const { comicName, comicYear } = parseComicTitle(title)
 
     return (
         <div className='comic-card-container' key={id}>
-            <img src={img} />
-            <h3>Whois ..?? lalalal long infinity cominc #1</h3>
-            <span>1967</span>
+            <img src={imgSrc} />
+            <h3>{comicName}</h3>
+            <span>{comicYear}</span>
 
 
         </div>

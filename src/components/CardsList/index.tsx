@@ -16,7 +16,7 @@ const CardsList: React.FC<CardsListProps> = ({ data, ChildComponent }) => {
                 <ChildComponent
                     id={item.id || index}
                     title={item.name}
-                    imgSrc={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                    imgSrc={item.thumbnail ? `${item.thumbnail.path}.${item.thumbnail.extension}` : item.resourceURI}
                 />
             ))}
         </div>

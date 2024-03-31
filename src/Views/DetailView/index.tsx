@@ -11,7 +11,7 @@ const DetailView = () => {
     const { id } = useParams();
     const { isLoading, character, characterComics } = useFetchOneCharacter(id)
 
-    console.log(character)
+    console.log(characterComics)
     return (
         <div className='detail-view'>
             <MainLayout>

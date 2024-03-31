@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import FavoriteHeart from '../FavoriteHeart';
-import './styles.scss'
 import { Link } from 'react-router-dom';
+import { CardProps } from '../../infrastructure/CardProps';
 
-interface CardProps {
-    id: number;
-    name: string;
-    imgSrc: string;
-}
+import './styles.scss'
 
 const CharacterCard: React.FC<CardProps> = ({ id, title, imgSrc }) => {
     const [toogleFavorite, setToogleFavorite] = useState(false)
