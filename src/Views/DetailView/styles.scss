@@ -31,3 +31,11 @@
     }
 
 }
+
+@media only screen and (max-width: 1200px) {
+    .detail-view {
+        .detail-inner-container {
+            padding: 3rem 0 3rem 3rem;
+        }
+    }
+}

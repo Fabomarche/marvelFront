@@ -36,3 +36,13 @@
 
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .resume-container {
+        padding: 0;
+
+        .resume-info-container {
+            padding: 0 2rem;
+        }
+    }
+}

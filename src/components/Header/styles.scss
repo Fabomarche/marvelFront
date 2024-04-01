@@ -4,4 +4,10 @@
     align-items: center;
     padding: 1rem 3rem;
     justify-content: space-between;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box
 }
