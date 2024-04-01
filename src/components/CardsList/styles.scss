@@ -3,4 +3,12 @@
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 1rem;
     justify-content: center;
+
+}
+
+@media only screen and (max-width: 670px) {
+    .cards-list-container {
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+        gap: 0.5rem;
+    }
 }

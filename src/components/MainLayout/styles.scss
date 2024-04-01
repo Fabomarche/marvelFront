@@ -15,3 +15,16 @@
     padding: 3rem;
     text-transform: uppercase;
 }
+
+
+
+@media only screen and (max-width: 670px) {
+
+    .layout-inner-container {
+        padding: 2.5rem 1rem;
+    }
+
+    .layout-title {
+        font-size: 1.5em;
+    }
+}
