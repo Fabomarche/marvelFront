@@ -11,8 +11,8 @@ import './styles.scss'
 
 const DetailView = () => {
     const { id } = useParams();
-    const { isLoading, character } = useFetchOneCharacter(id)
-    const { isLoadingComics, comics } = useFetchCharacterComics(id)
+    const { isLoading, character } = useFetchOneCharacter(id || '')
+    const { isLoadingComics, comics } = useFetchCharacterComics(id || '')
 
 
     return (
@@ -20,13 +20,13 @@ const DetailView = () => {
             <MainLayout>
                 {isLoading ? "loding..."
                     :
-                    <CharacterResume id={parseInt(id)} name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                    <CharacterResume id={parseInt(id || '')} name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                 }
 
                 <div className='detail-inner-container'>
                     <h2 className='layout-title'>Comics</h2>
                     {isLoadingComics ? "loading..."
-                        : <CardsList data={comics} ChildComponent={ComicCard} useCustomStyles={true} />
+                        : <CardsList data={comics} ChildComponent={ComicCard} />
                     }
 
 
