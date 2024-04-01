@@ -31,7 +31,7 @@ export async function fetchOneCharacter(id: string): Promise<any> {
 }
 export async function fetchCharacterComics(id: string): Promise<any> {
     try {
-        const url = `${import.meta.env.VITE_MARVEL_BASE_URL}characters/${id}/comics?ts=1&apikey=${import.meta.env.VITE_MARVEL_PUBLIC_KEY}&hash=${import.meta.env.VITE_MARVEL_HASH}`
+        const url = `${import.meta.env.VITE_MARVEL_BASE_URL}characters/${id}/comics?orderBy=onsaleDate&ts=1&apikey=${import.meta.env.VITE_MARVEL_PUBLIC_KEY}&hash=${import.meta.env.VITE_MARVEL_HASH}`
 
         const response = await axios.get(url)
         const data = response.data
