@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import FavoriteHeart from '../FavoriteHeart';
 import { useNavigate } from 'react-router-dom';
 import { CardProps } from '../../infrastructure/CardProps';
