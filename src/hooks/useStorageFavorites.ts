@@ -33,11 +33,18 @@ const useStorageFavorites = (key: string) => {
         console.log(favoritesCount)
     };
 
+    const filterFavorites = (filter: string) => {
+        const updatedFavorites = [...favorites];
+        const filteredFavorites = updatedFavorites.filter(item => item.title.includes(filter))
+        return filteredFavorites
+    }
+
     return {
         favorites,
         toggleFavorite,
         isFavorite,
-        favoritesCount
+        favoritesCount,
+        filterFavorites
     };
 }
 
