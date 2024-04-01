@@ -12,7 +12,6 @@ const FavoritesView = () => {
     const { favorites, filterFavorites } = useStorageFavorites('favoritesCharacters')
     const [filter, setFilter] = useState('')
 
-    console.log("aca", filterFavorites('AEGIS (TREY ROLLINS)'))
     return (
         <MainLayout>
             <h2 className='layout-title'>Favorites</h2>
