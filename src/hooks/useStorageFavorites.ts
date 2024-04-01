@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react';
 import { FavoriteType } from '../infrastructure/FavoritesTypes';
+import { StorageRepository, LocalStorageRepository } from '../infrastructure/repositories/StorageRepository';
 
 const useStorageFavorites = (key: string) => {
     const [favorites, setFavorites] = useState<FavoriteType[]>([]);
     const [favoritesCount, setFavoritesCount] = useState<number>(0)
 
+    const storageRepository = new StorageRepository(new LocalStorageRepository());
+
     useEffect(() => {
-        const storedFavorites = localStorage.getItem(key);
+        const storedFavorites = storageRepository.getItem(key);
         if (storedFavorites) {
             setFavorites(JSON.parse(storedFavorites));
             setFavoritesCount(JSON.parse(storedFavorites).length)
         }
-    }, [key]);
+    }, [key, storageRepository]);
 
     const isFavorite = (card: FavoriteType) => {
         return favorites.some(item => item.id === card.id);
@@ -29,7 +32,7 @@ const useStorageFavorites = (key: string) => {
         }
         setFavoritesCount(updatedFavorites.length)
         setFavorites(updatedFavorites);
-        localStorage.setItem(key, JSON.stringify(updatedFavorites));
+        storageRepository.setItem(key, JSON.stringify(updatedFavorites));
         console.log(favoritesCount)
     };
 
