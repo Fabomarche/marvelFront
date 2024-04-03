@@ -1,23 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { FavoriteType } from '../infrastructure/FavoritesTypes';
+import { useFavorites } from '../infrastructure/context/FavoritesContext';
 import { StorageRepository, LocalStorageRepository } from '../infrastructure/repositories/StorageRepository';
 
 const useStorageFavorites = (key: string) => {
-    const [favorites, setFavorites] = useState<FavoriteType[]>([]);
-    const [favoritesCount, setFavoritesCount] = useState<number>(0)
+    const { favorites, setFavorites } = useFavorites();
 
     const storageRepository = new StorageRepository(new LocalStorageRepository());
+    const storedFavorites = storageRepository.getItem(key);
 
     useEffect(() => {
-        const storedFavorites = storageRepository.getItem(key);
         if (storedFavorites) {
             setFavorites(JSON.parse(storedFavorites));
-            setFavoritesCount(JSON.parse(storedFavorites).length)
         }
-    }, [key, storageRepository]);
+    }, [storedFavorites, setFavorites]);
 
     const isFavorite = (card: FavoriteType) => {
-        return favorites.some(item => item.id === card.id);
+        return favorites.some((item: FavoriteType) => item.id === card.id);
     };
 
     const toggleFavorite = (card: FavoriteType) => {
@@ -30,10 +29,8 @@ const useStorageFavorites = (key: string) => {
         } else {
             updatedFavorites.splice(index, 1);
         }
-        setFavoritesCount(updatedFavorites.length)
         setFavorites(updatedFavorites);
         storageRepository.setItem(key, JSON.stringify(updatedFavorites));
-        console.log(favoritesCount)
     };
 
     const filterFavorites = (filter: string) => {
@@ -46,7 +43,6 @@ const useStorageFavorites = (key: string) => {
         favorites,
         toggleFavorite,
         isFavorite,
-        favoritesCount,
         filterFavorites
     };
 }

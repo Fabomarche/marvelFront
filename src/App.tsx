@@ -1,26 +1,32 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FavoritesContext from './infrastructure/context/FavoritesContext';
 import Home from './Views/Home'
 import FavoritesView from './Views/FavoritesView'
 import DetailView from './Views/DetailView'
 import './App.css'
+import { useState } from 'react';
 
 
 function App() {
-
+  const [favorites, setFavorites] = useState([])
 
   return (
-    <Router>
+    <FavoritesContext.Provider value={{ favorites, setFavorites }}>
 
-      <Routes>
+      <Router>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<FavoritesView />} />
-        <Route path="/detail/:id" element={<DetailView />} />
-        <Route path="/detail/undefined" element={<Home />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<FavoritesView />} />
+          <Route path="/detail/:id" element={<DetailView />} />
+          <Route path="/detail/undefined" element={<Home />} />
+          {/* add 404 page */}
+        </Routes>
 
-    </Router>
+      </Router>
+
+    </ FavoritesContext.Provider>
   )
 }
 

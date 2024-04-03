@@ -4,12 +4,12 @@ import useStorageFavorites from '../../hooks/useStorageFavorites'
 import './styles.scss'
 
 const FavoriteCounter = () => {
-  const { favoritesCount } = useStorageFavorites('favoritesCharacters')
+  const { favorites } = useStorageFavorites('favoritesCharacters')
 
   return (
     <div className='favorite-counter-container'>
       <img src={heart} alt='heart icon' width={24} />
-      <span>{favoritesCount}</span>
+      <span>{favorites.length}</span>
     </div>
   )
 }
