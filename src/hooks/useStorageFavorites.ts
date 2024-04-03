@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FavoriteType } from '../infrastructure/FavoritesTypes';
+import { FavoriteType } from '../infrastructure/Card';
 import { useFavorites } from '../infrastructure/context/FavoritesContext';
 import { StorageRepository, LocalStorageRepository } from '../infrastructure/repositories/StorageRepository';
 

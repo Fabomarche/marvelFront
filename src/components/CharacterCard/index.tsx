@@ -1,6 +1,6 @@
 import FavoriteHeart from '../FavoriteHeart';
 import { useNavigate } from 'react-router-dom';
-import { CardProps } from '../../infrastructure/CardProps';
+import { CardProps } from '../../infrastructure/Card';
 import useStorageFavorites from '../../hooks/useStorageFavorites';
 
 import './styles.scss'

@@ -1,5 +1,5 @@
 import { createContext, useContext, Dispatch, SetStateAction } from 'react';
-import { FavoriteType } from '../FavoritesTypes';
+import { FavoriteType } from '../Card';
 
 const initialFavorites: FavoriteType[] = []
 
