@@ -1,8 +1,9 @@
 import axios from 'axios'
+import environment from '../infrastructure/env'
 
 export async function fetchAllCharacters(filter: string | null): Promise<any> {
     try {
-        const url = `${import.meta.env.VITE_MARVEL_BASE_URL}characters?limit=50&ts=1&apikey=${import.meta.env.VITE_MARVEL_PUBLIC_KEY}&hash=${import.meta.env.VITE_MARVEL_HASH}${filter ? `&nameStartsWith=${filter}` : ''}`
+        const url = `${environment.apiUrl}characters?limit=50&ts=1&apikey=${environment.publicKey}&hash=${environment.hash}${filter ? `&nameStartsWith=${filter}` : ''}`
 
         const response = await axios.get(url)
         const data = response.data
@@ -17,7 +18,7 @@ export async function fetchAllCharacters(filter: string | null): Promise<any> {
 
 export async function fetchOneCharacter(id: string): Promise<any> {
     try {
-        const url = `${import.meta.env.VITE_MARVEL_BASE_URL}characters/${id}?ts=1&apikey=${import.meta.env.VITE_MARVEL_PUBLIC_KEY}&hash=${import.meta.env.VITE_MARVEL_HASH}`
+        const url = `${environment.apiUrl}characters/${id}?ts=1&apikey=${environment.publicKey}&hash=${environment.hash}`
 
         const response = await axios.get(url)
         const data = response.data
@@ -31,7 +32,7 @@ export async function fetchOneCharacter(id: string): Promise<any> {
 }
 export async function fetchCharacterComics(id: string): Promise<any> {
     try {
-        const url = `${import.meta.env.VITE_MARVEL_BASE_URL}characters/${id}/comics?orderBy=onsaleDate&ts=1&apikey=${import.meta.env.VITE_MARVEL_PUBLIC_KEY}&hash=${import.meta.env.VITE_MARVEL_HASH}`
+        const url = `${environment.apiUrl}characters/${id}/comics?orderBy=onsaleDate&ts=1&apikey=${environment.publicKey}&hash=${environment.hash}`
 
         const response = await axios.get(url)
         const data = response.data
