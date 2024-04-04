@@ -1,5 +1,5 @@
 import { describe, it, afterEach, expect } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import Search from '.'
 
 

@@ -1,5 +1,5 @@
 import { describe, it, afterEach, expect } from 'vitest'
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 
 import MainLayout from '.'
 import { BrowserRouter } from 'react-router-dom';

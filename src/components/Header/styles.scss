@@ -1,8 +1,6 @@
 @import '../../assets/variables.scss';
 
-a {
-    text-decoration: none;
-}
+
 
 .header-container {
     background-color: $header-bg;
@@ -15,7 +13,11 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box
+    box-sizing: border-box;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 @media only screen and (max-width: 670px) {

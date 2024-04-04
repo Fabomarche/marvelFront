@@ -6,3 +6,7 @@
 h3 {
     all: unset;
 }
+
+a {
+    text-decoration: none;
+}
