@@ -20,7 +20,7 @@ const DetailView = () => {
             <MainLayout>
                 {isLoading ? "loding..."
                     :
-                    <CharacterResume id={parseInt(id || '')} name={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+                    <CharacterResume id={parseInt(id || '')} title={character.name} description={character.description} imgSrc={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
                 }
 
                 <div className='detail-inner-container'>

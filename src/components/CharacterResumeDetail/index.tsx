@@ -1,20 +1,14 @@
 import FavoriteHeart from '../FavoriteHeart'
 import useStorageFavorites from '../../hooks/useStorageFavorites';
+import { ResumeProps } from '../../infrastructure/Card';
 import './styles.scss'
 
-interface Props {
-    id: number;
-    name: string;
-    description: string;
-    imgSrc: string;
-}
-
-const CharacterResume: React.FC<Props> = ({ id, name, imgSrc, description }) => {
+const CharacterResume: React.FC<ResumeProps> = ({ id, title, imgSrc, description }) => {
     const { toggleFavorite, isFavorite } = useStorageFavorites('favoritesCharacters')
 
     const card = {
         id: id,
-        title: name,
+        title: title,
         imgSrc: imgSrc
     }
 
@@ -24,10 +18,10 @@ const CharacterResume: React.FC<Props> = ({ id, name, imgSrc, description }) => 
     }
     return (
         <div className='resume-container'>
-            <img src={imgSrc} alt={name} />
+            <img src={imgSrc} alt={title} />
             <div className='resume-info-container'>
                 <div className='resume-title-container'>
-                    <h2>{name}</h2>
+                    <h2>{title}</h2>
                     <FavoriteHeart isFavorite={isFavorite(card)} handleToogleFavorite={handleToogleFavorite} />
                 </div>
                 <p>

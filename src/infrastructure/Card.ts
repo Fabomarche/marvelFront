@@ -6,3 +6,6 @@ export interface Card {
 
 export interface CardProps extends Card { }
 export interface FavoriteType extends Card { }
+export interface ResumeProps extends Card {
+    description: string
+}
