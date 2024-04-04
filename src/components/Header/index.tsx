@@ -6,10 +6,10 @@ import './styles.scss';
 const Header = () => {
     return (
         <div className='header-container'>
-            <Link to='/'>
+            <Link to='/' data-testid="to-home-link">
                 <Logo />
             </Link>
-            <Link to='/favorites' >
+            <Link to='/favorites' data-testid="to-favorites-link">
                 <FavoriteCounter />
             </Link>
         </div>
