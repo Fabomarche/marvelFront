@@ -12,7 +12,7 @@ interface HeartProps {
 const FavoriteHeart: React.FC<HeartProps> = ({ isFavorite, handleToogleFavorite }) => {
 
     return (
-        <button onClick={handleToogleFavorite}>
+        <button onClick={handleToogleFavorite} data-testid='heart-button'>
             {isFavorite ? <Heart className={'heart'} />
                 : <EmptyHeart className={'heart'} />}
         </button>
