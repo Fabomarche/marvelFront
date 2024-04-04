@@ -5,7 +5,7 @@ import './styles.scss';
 
 const Header = () => {
     return (
-        <div className='header-container'>
+        <div className='header-container' data-testid='header'>
             <Link to='/' data-testid="to-home-link">
                 <Logo />
             </Link>
