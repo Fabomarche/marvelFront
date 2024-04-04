@@ -24,7 +24,7 @@ const CharacterCard: React.FC<CardProps> = ({ id, title, imgSrc }) => {
     }
     return (
 
-        <div className='character-card-container' id={`${id}`} key={id}>
+        <div className='character-card-container' id={`${id}`} key={id} data-testid='character-card'>
             <img src={imgSrc} alt={title} onClick={handleCardClick} />
 
             <div className='card-inner-container'>
