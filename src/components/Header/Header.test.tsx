@@ -1,6 +1,6 @@
 import { describe, it, afterEach, expect } from 'vitest'
 import { cleanup, render, fireEvent, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import Header from '.'
 
@@ -12,9 +12,10 @@ describe('Header', (): void => {
     it('marvel logo should redirect to / ', (): void => {
         const history = createMemoryHistory();
         render(
-            <MemoryRouter history={history}>
+            <Router location={history.location}
+                navigator={history}>
                 <Header />
-            </MemoryRouter>
+            </Router>
         )
         const homeLink = screen.getByTestId('to-home-link')
 
@@ -28,14 +29,15 @@ describe('Header', (): void => {
     it('favorite count should redirect to /favorites ', (): void => {
         const history = createMemoryHistory();
         render(
-            <MemoryRouter history={history}>
+            <Router location={history.location}
+                navigator={history}>
                 <Header />
-            </MemoryRouter>
+            </Router>
         )
 
         const favoriteLink = screen.getByTestId('to-favorites-link')
 
         fireEvent.click(favoriteLink)
-        expect(history.location.pathname).toBe('/')
+        expect(history.location.pathname).toBe('/favorites')
     })
 })
