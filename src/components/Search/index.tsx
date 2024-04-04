@@ -18,7 +18,11 @@ const Search: React.FC<Props> = ({ setFilter, isLoading, charactersCount }) => {
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
+        const value = event.target.value;
+        setInputValue(value);
+        if (value.trim() === '') {
+            setFilter('')
+        }
     };
 
     return (
