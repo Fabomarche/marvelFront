@@ -35,7 +35,7 @@ const useStorageFavorites = (key: string) => {
 
     const filterFavorites = (filter: string) => {
         const updatedFavorites = [...favorites];
-        const filteredFavorites = updatedFavorites.filter(item => item.title.includes(filter))
+        const filteredFavorites = updatedFavorites.filter(item => item.title.toLowerCase().includes(filter.toLowerCase()))
         return filteredFavorites
     }
 
