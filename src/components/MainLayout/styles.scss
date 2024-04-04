@@ -1,3 +1,5 @@
+@import '../../assets/variables.scss';
+
 .layout-container {
     padding-top: 75px;
 }
@@ -6,7 +8,7 @@
 .layout-title {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2em;
+    font-size: $views-title-size;
     line-height: 2rem;
     padding-bottom: 1.5rem;
 }
@@ -25,6 +27,6 @@
     }
 
     .layout-title {
-        font-size: 1.5em;
+        font-size: $mobile-views-title-size;
     }
 }

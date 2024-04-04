@@ -1,3 +1,5 @@
+@import '../../assets/variables.scss';
+
 .favorite-counter-container {
     display: flex;
     align-items: center;
@@ -6,7 +8,7 @@
     justify-content: space-between;
 
     span {
-        color: #FFFFFF;
+        color: $header-text-color;
         size: 1em;
         font-weight: 400;
         line-height: 18.75px;

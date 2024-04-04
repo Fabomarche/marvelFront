@@ -1,5 +1,11 @@
+@import '../../assets/variables.scss';
+
+a {
+    text-decoration: none;
+}
+
 .header-container {
-    background-color: black;
+    background-color: $header-bg;
     display: flex;
     align-items: center;
     padding: 1rem 3rem;

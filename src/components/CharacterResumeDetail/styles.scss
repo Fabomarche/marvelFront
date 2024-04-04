@@ -1,5 +1,7 @@
+@import '../../assets/variables.scss';
+
 .resume-container {
-    background-color: black;
+    background-color: $character-card-bg;
     padding: 0 16rem;
     display: flex;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0% 100%);
@@ -11,7 +13,7 @@
     }
 
     .resume-info-container {
-        color: white;
+        color: $character-text-color;
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -64,7 +66,7 @@
             padding: 1.5rem;
 
             h2 {
-                font-size: 2em;
+                font-size: $mobile-resume-title-size;
             }
 
             p {
