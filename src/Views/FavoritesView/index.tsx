@@ -19,13 +19,11 @@ const FavoritesView = () => {
 
     }, [favorites, filter, filterFavorites])
 
-    console.log(filterFavorites('Hulk'))
     return (
         <MainLayout>
             <h2 className='layout-title'>Favorites</h2>
             <Search isLoading={false} charactersCount={favoritesCount} setFilter={setFilter} />
             <CardsList data={filterFavorites(filter)} ChildComponent={CharacterCard} />
-
         </MainLayout>
     )
 }
