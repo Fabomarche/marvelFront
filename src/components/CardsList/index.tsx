@@ -1,7 +1,7 @@
 import React from 'react';
-import { CharacterType } from '../../infrastructure/CharacterTypes.ts';
-import { ComicType } from '../../infrastructure/ComicTypes.ts';
-import { FavoriteType } from '../../infrastructure/Card.ts';
+import type { CharacterType } from '../../infrastructure/CharacterTypes.ts';
+import type { ComicType } from '../../infrastructure/ComicTypes.ts';
+import type { FavoriteType } from '../../infrastructure/Card.ts';
 import { isCharacter, IsImgSrc } from '../../helpers/isCharacter.ts';
 
 

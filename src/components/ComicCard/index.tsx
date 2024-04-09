@@ -1,5 +1,5 @@
 import { parseComicTitle } from '../../helpers/parseComicTitle'
-import { CardProps } from '../../infrastructure/Card'
+import type { CardProps } from '../../infrastructure/Card'
 import './syles.scss'
 
 

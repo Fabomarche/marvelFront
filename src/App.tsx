@@ -5,7 +5,7 @@ import FavoritesContext from './infrastructure/context/FavoritesContext';
 import Home from './Views/Home'
 import FavoritesView from './Views/FavoritesView'
 import DetailView from './Views/DetailView'
-import { FavoriteType } from './infrastructure/Card';
+import type { FavoriteType } from './infrastructure/Card';
 import './App.css'
 
 

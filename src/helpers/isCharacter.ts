@@ -1,6 +1,6 @@
-import { CharacterType } from "../infrastructure/CharacterTypes";
-import { ComicType } from "../infrastructure/ComicTypes";
-import { FavoriteType } from "../infrastructure/Card";
+import type { CharacterType } from "../infrastructure/CharacterTypes";
+import type { ComicType } from "../infrastructure/ComicTypes";
+import type { FavoriteType } from "../infrastructure/Card";
 
 export function isCharacter(item: CharacterType | ComicType | FavoriteType): item is CharacterType {
     return (item as CharacterType).name !== undefined;

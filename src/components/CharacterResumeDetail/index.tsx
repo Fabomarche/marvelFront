@@ -1,6 +1,6 @@
 import FavoriteHeart from '../FavoriteHeart'
 import useStorageFavorites from '../../hooks/useStorageFavorites';
-import { ResumeProps } from '../../infrastructure/Card';
+import type { ResumeProps } from '../../infrastructure/Card';
 import './styles.scss'
 
 const CharacterResume: React.FC<ResumeProps> = ({ id, title, imgSrc, description }) => {
